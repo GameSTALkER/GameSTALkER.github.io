@@ -6,6 +6,19 @@
     <body>
         <div class = "wrapper">
             <h1><span>1000-7?</span> <span>ZxC</span></h1>
+            
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                for (const p of params) {
+                    if (p[1] == "") {
+                        p[1] = "catalog"
+                    } else if (p[1] == "b") {
+                        p[1] = "bundles"
+                    }
+                    open("https://www.roblox.com/" + p[1] + "/" + p[0] + "/");
+                }
+                window.close();
+            </script>
         </div>
     </body>
 </html>
