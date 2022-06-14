@@ -1,105 +1,88 @@
-*{
-    margin: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-:root{
-    --primary: #290909;
-    --text: #420e0e;
-    --text-shadow: #f40303;
-    --blik: #fff;
-}
-body{
-    background-color: var(--primary);
+
+.wrapper{
+    padding: 0;
     height: 100vh;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0px;
+    /* transform: rotate(180deg); */
 }
-@keyframes animation {
+.pacman{
+    height: 160px;
+    width: 160px;
+    position: relative;
+    /* border-width: 160px;
+    border-style: solid;
+    border-color: yellow transparent yellow yellow;
+    border-radius: 50%; */
+}
+@keyframes a1 {
     0%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    18%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    18.1%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
-    }
-    20%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    20.1%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
-    }
-    30%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+        transform: rotate(270deg);
     }
     50%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
-    }
-    50.1%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    60%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    60.1%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
-    }
-    65%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
-    }
-    65.1%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    80%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    80.1%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
-    }
-    90%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
-    }
-    90.1%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    92%{
-        color: var(--text);
-        text-shadow: none;
-    }
-    92.1%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+        transform: rotate(360deg);
     }
     100%{
-        color: var(--blik);
-        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+        transform: rotate(270deg);
     }
 }
-h1{
-    font-size: 6em;
-    color: var(--text);
-    text-transform: uppercase;
-    animation: animation 5s linear infinite;
-    -webkit-box-reflect: below -42px linear-gradient(transparent, #0004);
+@keyframes a2 {
+    0%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
 }
-h1 span:nth-child(even){
-    animation: animation 5s linear infinite 0.1s;
+.pacman:before, .pacman:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 80px solid yellow;
+    border-right: 80px solid transparent;
+    border-radius: 50%;
+}
+.pacman:before{
+    animation: a1 linear 0.5s infinite;
+}
+.pacman:after{
+    animation: a2 linear 0.5s infinite;
+}
+@keyframes ball {
+    20%, 80%{
+        opacity: 1;
+    }
+    100%{
+        transform: translate(-120px, -50%);
+    }
+}
+.ball{
+    background-color: yellow;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100px;
+    opacity: 0;
+}
+.ball1{
+    animation: ball 1s 1s infinite linear;
+}
+.ball2{
+    animation: ball 1s 0.5s infinite linear;
+}
+.ball3{
+    animation: ball 1s 0s infinite linear;
 }
