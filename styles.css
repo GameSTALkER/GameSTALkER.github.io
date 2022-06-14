@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+:root{
+    --primary: #290909;
+    --text: #420e0e;
+    --text-shadow: #f40303;
+    --blik: #fff;
+}
+body{
+    background-color: var(--primary);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes animation {
+    0%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    18%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    18.1%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    20%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    20.1%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    30%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    50%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    50.1%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    60%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    60.1%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    65%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    65.1%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    80%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    80.1%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    90%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    90.1%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    92%{
+        color: var(--text);
+        text-shadow: none;
+    }
+    92.1%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+    100%{
+        color: var(--blik);
+        text-shadow: 0 0 10px var(--text-shadow), 0 0 20px var(--text-shadow), 0 0 40px var(--text-shadow), 0 0 160px var(--text-shadow), 0 0 400px var(--text-shadow);
+    }
+}
+h1{
+    font-size: 6em;
+    color: var(--text);
+    text-transform: uppercase;
+    animation: animation 5s linear infinite;
+    -webkit-box-reflect: below -42px linear-gradient(transparent, #0004);
+}
+h1 span:nth-child(even){
+    animation: animation 5s linear infinite 0.1s;
+}
