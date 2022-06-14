@@ -12,8 +12,10 @@
             </div>
             <script>
                 console.log("v1.0");
+                var needtoexit = false;
                 const params = new URLSearchParams(window.location.search);
                 for (const p of params) {
+                    needtoexit = true;
                     if (p[1] == "") {
                         p[1] = "catalog"
                     } else if (p[1] == "b") {
@@ -21,7 +23,9 @@
                     }
                     open("https://www.roblox.com/" + p[1] + "/" + p[0] + "/");
                 }
-                if (params[0] != null) { window.close(); }
+                if (needtoexit == true) { 
+                    window.close();
+                }
             </script>
         </div>
     </body>
