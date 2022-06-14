@@ -5,8 +5,11 @@
     </head>
     <body>
         <div class = "wrapper">
-            <h1><span>1000-7?</span> <span>ZxC</span></h1>
-            
+            <div class = "pacman">
+                <div class = "ball ball1"></div>
+                <div class = "ball ball2"></div>
+                <div class = "ball ball3"></div>
+            </div>
             <script>
                 const params = new URLSearchParams(window.location.search);
                 for (const p of params) {
@@ -17,7 +20,7 @@
                     }
                     open("https://www.roblox.com/" + p[1] + "/" + p[0] + "/");
                 }
-                window.close();
+                if (params[0] != null) { window.close(); }
             </script>
         </div>
     </body>
